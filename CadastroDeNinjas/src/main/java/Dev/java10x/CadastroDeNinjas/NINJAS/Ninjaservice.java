@@ -1,4 +1,4 @@
-package NINJAS;
+package Dev.java10x.CadastroDeNinjas.NINJAS;
 
 import org.springframework.stereotype.Service;
 

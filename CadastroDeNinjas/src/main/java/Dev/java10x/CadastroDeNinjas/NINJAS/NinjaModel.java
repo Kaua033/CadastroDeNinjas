@@ -1,0 +1,31 @@
+package Dev.java10x.CadastroDeNinjas.NINJAS;
+
+import Dev.java10x.CadastroDeNinjas.MISSOES.MIssoesModel;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Table(name = "TB_NINJAS")
+public class NinjaModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", unique = true )
+
+    Long ID;
+
+    @Column(name = "Nome")
+String Nome;
+    @Column(name = "Email", unique = true )
+    String Email;
+
+    @ManyToOne
+private MIssoesModel missoes;
+
+}
+
