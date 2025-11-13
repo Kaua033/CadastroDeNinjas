@@ -1,6 +1,7 @@
 package Dev.java10x.CadastroDeNinjas.MISSOES;
 
 import Dev.java10x.CadastroDeNinjas.NINJAS.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ String NomeDamissao;
 @Column(name = "Rank")
 String Rank;
 
-
+@JsonIgnore
 @OneToMany(mappedBy = "missoes")
 private List<NinjaModel> ninja;
 
