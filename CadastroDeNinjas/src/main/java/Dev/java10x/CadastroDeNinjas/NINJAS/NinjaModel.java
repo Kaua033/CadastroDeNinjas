@@ -34,5 +34,12 @@ public class NinjaModel {
 
     private MIssoesModel missoes;
 
+    public void setID(Long ID) {
+        this.ID = ID;
+    }
+
+    public Long setID() {
+        return ID;
+    }
 }
 

@@ -32,8 +32,19 @@ private NINJARepository ninjaRepository;
         return ninjaRepository.save(ninjaModel);
     }
 
-    //public  void  Deletar(Long ID) {
-//    ninjaRepository.deleteAllById(ID);
+    public  void  Deletar(Long ID) {
+        ninjaRepository.deleteById(ID);
+    }
+
+
+    public NinjaModel atualizarNinja(Long ID, NinjaModel ninjaAtualizado) {
+        if (ninjaRepository.existsById(ID)) {
+            ninjaAtualizado.setID(ID);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+        return null;
+    }
+
 
 }
 

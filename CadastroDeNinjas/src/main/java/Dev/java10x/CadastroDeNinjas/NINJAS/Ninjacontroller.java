@@ -30,20 +30,22 @@ public class Ninjacontroller {
     public List<NinjaModel> ninjaModelList(){
         return ninjaservice.ninjas();
     }
-    //localhost:8080/NINJAS/mostrarNINJAID/
+    //localhost:8080/NINJAS/ID/
     @GetMapping("/ID/{ID}")
     public NinjaModel ninjaModel(@PathVariable  long ID){
         return ninjaservice.ninjasID(ID);
     }
 
-    @PutMapping("/alterarNINJA")
-    public  String alterar(){
-        return "alterar Missao";
+    @PutMapping("/alterarNINJA/{ID}")
+    public NinjaModel alterarNinaja(@PathVariable long ID,@RequestBody NinjaModel ninjaModel){
+        return ninjaservice.atualizarNinja(ID,ninjaModel);
+    }
+//localhost:8080/NINJAS/deletarNInJA/{ID}
+@DeleteMapping("/deletarNIJA/{ID}")
+    public void DeletarNinjasID(@PathVariable long ID){
+    ninjaservice.Deletar(ID);
     }
 
-    //@DeleteMapping("/deletarNIJA/{ID}")
-    //public void DeletarNinjasID(@PathVariable long ID){
-      //      ninjaservice.Deletar(ID);
-    //}
+
 }
 
