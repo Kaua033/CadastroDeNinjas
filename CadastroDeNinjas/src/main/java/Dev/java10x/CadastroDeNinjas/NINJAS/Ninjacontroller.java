@@ -21,24 +21,24 @@ public class Ninjacontroller {
     //criar ninjas
 
     @PostMapping("/criarNINJA")
-    public NinjaModel CriarN( @RequestBody  NinjaModel ninjaModel){
-        return ninjaservice.CriarNInjas(ninjaModel);
+    public NinjaDTO CriarN( @RequestBody  NinjaDTO ninjaD){
+        return ninjaservice.CriarNInjas(ninjaD);
 
     }
     //localhost:8080/NINJAS/mostrarNINJA
     @GetMapping("/mostrarNINJA")
-    public List<NinjaModel> ninjaModelList(){
+    public List<NinjaDTO> ninjaModelList(){
         return ninjaservice.ninjas();
     }
     //localhost:8080/NINJAS/ID/
     @GetMapping("/ID/{ID}")
-    public NinjaModel ninjaModel(@PathVariable  long ID){
+    public NinjaDTO ninjaModel(@PathVariable  long ID){
         return ninjaservice.ninjasID(ID);
     }
 
     @PutMapping("/alterarNINJA/{ID}")
-    public NinjaModel alterarNinaja(@PathVariable long ID,@RequestBody NinjaModel ninjaModel){
-        return ninjaservice.atualizarNinja(ID,ninjaModel);
+    public NinjaDTO alterarNinaja(@PathVariable long ID,@RequestBody NinjaDTO ninja){
+        return ninjaservice.atualizarNinja(ID,ninja);
     }
 //localhost:8080/NINJAS/deletarNInJA/{ID}
 @DeleteMapping("/deletarNIJA/{ID}")
