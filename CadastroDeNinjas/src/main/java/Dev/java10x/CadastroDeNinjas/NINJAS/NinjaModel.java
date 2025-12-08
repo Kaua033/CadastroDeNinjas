@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @AllArgsConstructor
@@ -14,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Table(name = "TB_NINJAS")
 @JsonPropertyOrder({"ID", "Nome", "Email", "idade", "missoes_ID"})
+@ToString(exclude = "missoes_ID")
 public class NinjaModel {
 
     @Id

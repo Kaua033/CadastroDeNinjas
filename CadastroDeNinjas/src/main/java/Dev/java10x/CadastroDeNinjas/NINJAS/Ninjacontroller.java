@@ -1,5 +1,6 @@
 package Dev.java10x.CadastroDeNinjas.NINJAS;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,10 @@ public class Ninjacontroller {
         this.ninjaservice = ninjaservice;
     }
 
+
     @GetMapping("/teste")
+   //summary= resumo, descrition = descriçao
+    @Operation( summary = "mensagem de teste", description = "rota de boas vindasd")
     public String teste() {
         return "oi";
     }
